@@ -1,12 +1,12 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 
-import Home from "../components/pages/Home";
-import Login from "../components/pages/Login";
-import UserManagement from "../components/pages/UserManagement";
-import Setting from "../components/Setting";
-import Page404 from "../components/pages/Page404";
-import HeaderLayout from "../components/templates/HeaderLayout";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import UserManagement from "../pages/UserManagement";
+import Setting from "../pages/Setting";
+import Page404 from "../pages/Page404";
+import HeaderLayout from "../templates/HeaderLayout";
 
 export const router = createBrowserRouter([
   {
