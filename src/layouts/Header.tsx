@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from "react";
+import React, { useEffect, memo, useCallback } from "react";
 import { Box, Flex, Heading, Link, useDisclosure } from "@chakra-ui/react";
 import MenuIconButton from "../components/button/MenuIconButton";
 import MenuDrawer from "../components/drawer/MenuDrawer";
@@ -14,6 +14,14 @@ const Header = memo(() => {
     []
   );
   const onClickSetting = useCallback(() => navigate("/home/setting"), []);
+
+  useEffect(() => {
+    console.log("render Header");
+  }, []);
+
+  useEffect(() => {
+    console.log(isOpen);
+  }, [isOpen]);
 
   return (
     <>

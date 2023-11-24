@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from "react";
+import React, { useEffect, memo, useCallback } from "react";
 import {
   Button,
   Drawer,
@@ -19,6 +19,10 @@ const MenuDrawer = memo((props: Props) => {
   const onClickButton = useCallback((action: () => void) => {
     props.onClose();
     action();
+  }, []);
+
+  useEffect(() => {
+    console.log("render MenuDrawer");
   }, []);
 
   return (

@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { useEffect, memo } from "react";
 import { IconButton } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
@@ -7,6 +7,10 @@ interface Props {
 }
 
 const MenuIconButton = memo((props: Props) => {
+  useEffect(() => {
+    console.log("render MenuIconButton");
+  }, []);
+
   return (
     <IconButton
       aria-label="メニューボタン"
