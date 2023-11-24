@@ -8,13 +8,12 @@ const useAuth = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const login = useCallback((id: string) => {
-    console.log(id);
 
     setLoading(true);
     axios
       .get<User>(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then((res) => {
-        if (res.data.id === id) {
+        if (res.data.id == Number(id)) {
           navigate("/home");
         } else {
           alert("ユーザーが見つかりません");
