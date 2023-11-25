@@ -5,9 +5,10 @@ interface Props {
   imageUrl: string;
   userName: string;
   fullName: string;
+  onClick: () => void;
 }
 
-const UserCard = memo(({ imageUrl, userName, fullName }: Props) => {
+const UserCard = memo(({ imageUrl, userName, fullName, onClick }: Props) => {
   return (
     <Box
       w="260px"
@@ -17,6 +18,7 @@ const UserCard = memo(({ imageUrl, userName, fullName }: Props) => {
       shadow="md"
       p={4}
       _hover={{ cursor: "pointer", opacity: 0.8 }}
+      onClick={onClick}
     >
       <Stack textAlign="center">
         <Image
