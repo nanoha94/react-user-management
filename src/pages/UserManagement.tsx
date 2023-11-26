@@ -28,7 +28,6 @@ const UserManagement = memo(() => {
 
   useEffect(() => {
     getUsers();
-    console.log(userSelector.loginUser);
   }, []);
 
   return (
