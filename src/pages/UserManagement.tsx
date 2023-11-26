@@ -1,4 +1,5 @@
 import React, { memo, useCallback, useEffect } from "react";
+import { useSelector } from "react-redux";
 import {
   Center,
   Spinner,
@@ -10,8 +11,10 @@ import UserCard from "../components/card/UserCard";
 import useAllUsers from "../hooks/useAllUsers";
 import UserDetailModal from "../components/modal/UserDetailModal";
 import useSelectUser from "../hooks/useSelectUser";
+import { userData } from "../redux/store";
 
 const UserManagement = memo(() => {
+  const userSelector = useSelector(userData);
   const { onSelectUser, selectedUser } = useSelectUser();
   const { getUsers, users, loading } = useAllUsers();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -25,6 +28,7 @@ const UserManagement = memo(() => {
 
   useEffect(() => {
     getUsers();
+    console.log(userSelector.loginUser);
   }, []);
 
   return (
